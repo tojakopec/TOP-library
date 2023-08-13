@@ -1,0 +1,22 @@
+:root {
+    box-sizing: border-box;
+    --header: min(3rem, 20vh);
+    --footer: min(2rem, 10vh);
+    --main: calc(100vh - calc(var(--header) + var(--footer)));
+}
+
+* {
+    outline: 1px dotted red;
+}
+
+#header {
+    height: var(--header);
+}
+
+#main {
+    height: var(--main);
+}
+
+#footer {
+    height: var(--footer);
+}
