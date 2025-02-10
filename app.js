@@ -1,10 +1,18 @@
-const main = document.querySelector('#main');
+const main = document.querySelector("#main");
+const addBookModal = document.getElementById("modal");
+const addBookButton = document.getElementById("addBookButton");
 
-let myLibrary = []
+let myLibrary = [];
 
-function Book(title, author, pages, isRead){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.isRead = isRead
+function Book(title, author, pages, isRead) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.isRead = isRead;
 }
+
+function addBookToLibrary() {}
+
+addBookButton.addEventListener("click", () => {
+  addBookModal.style.display = "flex";
+});
