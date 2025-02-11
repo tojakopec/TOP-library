@@ -15,7 +15,7 @@
     </header>
     <main id="main">
       <div id="modal">
-        <form>
+        <form id="addBookForm" onsubmit="addBookToLibrary(event)">
           <label for="title">Title</label>
           <input
             type="text"
@@ -38,7 +38,7 @@
           <input type="number" id="pages" name="pages" min="1" />
           <label for="isRead">Have you read it?</label>
           <input type="checkbox" id="isRead" name="isRead" />
-          <button id="addToLibrary" type="button">Add</button>
+          <button id="addToLibrary" type="submit">Add</button>
         </form>
       </div>
       <div id="books"></div>
