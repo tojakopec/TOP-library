@@ -38,7 +38,16 @@
           <input type="number" id="pages" name="pages" min="1" />
           <label for="isRead">Have you read it?</label>
           <input type="checkbox" id="isRead" name="isRead" />
-          <button id="addToLibrary" type="submit">Add</button>
+          <div id="formButtons">
+            <button id="addToLibrary" type="submit">Add</button>
+            <button
+              id="cancelAddToLibrary"
+              type="button"
+              onclick="closeAddBookForm()"
+            >
+              Cancel
+            </button>
+          </div>
         </form>
       </div>
       <div id="books"></div>

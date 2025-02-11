@@ -81,7 +81,13 @@ main {
   font-weight: 200;
 }
 
-#addToLibrary {
+#formButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+#formButtons button {
   width: fit-content;
   font-size: 1rem;
   font-weight: 700;
@@ -91,6 +97,6 @@ main {
   cursor: pointer;
 }
 
-#addToLibrary:hover {
+#formButtons button:hover {
   background-color: coral;
 }
