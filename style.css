@@ -27,6 +27,7 @@ body {
 }
 
 main {
+  width: 100vw;
   height: var(--main);
   padding: 3rem;
   display: flex;
@@ -99,4 +100,36 @@ main {
 
 #formButtons button:hover {
   background-color: coral;
+}
+
+#bookGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.bookCard {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0em;
+  width: 10rem;
+  height: 15rem;
+  border: 1px solid darkslategray;
+  border-left: 5px solid coral;
+  padding: 1em;
+  border-top-right-radius: 0.75em;
+  border-bottom-right-radius: 0.75em;
+}
+
+.bookCard h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bookCard p {
+  margin-bottom: 0.25rem;
 }
