@@ -115,7 +115,7 @@ main {
   flex-direction: column;
 
   gap: 0em;
-  width: 10rem;
+  width: 12rem;
   height: 15rem;
   border: 1px solid darkslategray;
   border-left: 5px solid coral;
@@ -125,11 +125,45 @@ main {
 }
 
 .bookCard h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+
   margin-top: 1rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  background-color: rgba(255, 127, 80, 0.7);
+  padding: 0 0.5em;
+  border-radius: 2px;
 }
 
 .bookCard p {
   margin-bottom: 0.25rem;
+}
+
+.card-buttons {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+
+  gap: 1em;
+}
+
+.card-buttons button:first-of-type {
+  background-color: coral;
+  border: 1px solid darkslategray;
+  border-radius: 0.5em;
+  cursor: pointer;
+  padding: 0.4em;
+}
+.card-buttons button:last-of-type {
+  background-color: rgb(232, 202, 191);
+  border: 1px solid rgba(47, 79, 79, 0.6);
+  border-radius: 0.5em;
+  padding: 0.4em;
+  cursor: pointer;
+}
+.card-buttons button:hover {
+  box-shadow: 2px 2px 2px rgba(47, 79, 79, 0.6);
 }

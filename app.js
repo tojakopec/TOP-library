@@ -128,14 +128,33 @@ class BookCard extends HTMLElement {
   }
 
   connectedCallback() {
+    this.render();
+  }
+
+  render() {
     this.innerHTML = `
       <div class="bookCard" id="book-${this.id}">
         <h3>${this.title}</h3>
         <p><strong>Author:</strong> ${this.author}</p>
         <p><strong>Pages:</strong> ${this.pages}</p>
         <p><strong>Read:</strong> ${this.isRead ? "Yes" : "No"}</p>
+        <div class="card-buttons">
+          <button type="button" onclick="deleteBook(${this.id})">Delete</button>
+          <button type="button" onclick="toggleReadStatus(${
+            this.id
+          })">Toggle Read</button> 
+        </div>
       </div>
     `;
+  }
+
+  updateBookDetails(newDetails) {
+    this.title = newDetails.title || this.title;
+    this.author = newDetails.author || this.author;
+    this.pages = newDetails.pages || this.pages;
+    this.isRead =
+      newDetails.isRead !== undefined ? newDetails.isRead : this.isRead;
+    this.render();
   }
 }
 
@@ -181,7 +200,23 @@ function updateLibraryView() {
 }
 
 function loadBooks() {
+  clearBookGrid();
   books.forEach((book) => bookGrid.append(new BookCard(book)));
+}
+
+function deleteBook(id) {
+  books = books.filter((book) => book.id !== id);
+  loadBooks();
+}
+
+function toggleReadStatus(id) {
+  books[id].isRead = !books[id].isRead;
+  const bookCard = document.querySelector(`book-card[id="${id}"]`);
+  bookCard.updateBookDetails(books[id]);
+}
+
+function clearBookGrid() {
+  bookGrid.innerHTML = "";
 }
 
 loadBooks();
